@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectarc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+
+        <a href="/" class="logo">
+            <img src="img/LOGO.png" alt="Rectarc_logo">
+            <h2>Rectarc</h2>
+        </a>
+
+        <nav>
+            <a href="#gallery">Gallery</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </nav>
+
+
+        <span class="menu">
+
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </span>
+        <span class="language">
+            <span>En</span> 
+            <i class="fa-solid fa-globe"></i>
+        </span>
+
+    </header>
+
+    <section class="hero">
+
+            <div class="slider">
+
+                <div class="frames">
+
+                    <div class="frame">
+                        <div class="frame_pic">
+                            <img src="img/slide1.png" alt="">
+                        </div>
+                        <div class="frame_text"> 
+                            <span>* lorem dolor sit amet conseng elit.</span>
+                            <h4>New Pair Of Fancy Shoes</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit autem aedit ex error suscipit totam? Sed, necessitatibus. Nam quas quam sed laborum iusto.</p>
+                            <button class="btn">Get Now</button>
+                        </div>
+                    </div>
+
+                    <div class="frame">
+                        <div class="frame_pic">
+                            <img src="img/slide 2.png" alt="">
+                        </div>
+                        <div class="frame_text"> 
+                            <span>* lorem dolor sit amet conseng elit.</span>
+                            <h4>New Pair Of Fancy Shoes</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit autem aedit ex error suscipit totam? Sed, necessitatibus. Nam quas quam sed laborum iusto.</p>
+                            <button class="btn">Get Now</button>
+                        </div>
+                    </div>
+
+                    <div class="frame">
+                        <div class="frame_pic">
+                            <img src="img/slide 3.png" alt="">
+                        </div>
+                        <div class="frame_text"> 
+                            <span>* lorem dolor sit amet conseng elit.</span>
+                            <h4>New Pair Of Fancy Shoes</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit autem accusantium eius veniam repudiandae ad molestiae, maiores impedit ex error suscipit totam? Sed, necessitatibus. Nam quas quam sed laborum iusto.</p>
+                            <button class="btn">Get Now</button>
+                        </div>
+                    </div>
+                    <div class="frame">
+                        <div class="frame_pic">
+                            <img src="img/slide1.png" alt="">
+                        </div>
+                        <div class="frame_text"> 
+                            <span>* lorem dolor sit amet conseng elit.</span>
+                            <h4>New Pair Of Fancy Shoes</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit autem aedit ex error suscipit totam? Sed, necessitatibus. Nam quas quam sed laborum iusto.</p>
+                            <button class="btn">Get Now</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div class="currentframe_indicator">
+                </div>
+
+                <div class="image_counter">
+
+                    <div class="leftarrow arrow">&lt;</div>
+                   
+                    <div class="count">
+                        <span class="current_count">1</span>
+                        <span>/</span>
+                        <span class="total_count">5</span>
+                    </div>
+                   
+                    <div class="rightarrow arrow">&gt;</div>
+                </div>
+
+            </div>
+
+            <div class="company_watermark">
+                <h1 class="bottom">Rectarc</h1>
+                <h1 class="top">Rectarc</h1>
+            </div>
+
+    </section>
+
+
+    <section class="gallery" id="gallery">
+
+        <div class="filters">
+            
+            <button class="active btn " onclick="filterProduct('all',event)" >All</button>
+            <button class="btn " onclick="filterProduct('bottle',event)">BOTTLE</button>
+            <button class="btn " onclick="filterProduct('bag',event)">BAG</button>
+            <button class="btn " onclick="filterProduct('watch',event)">WATCH</button>
+            <button class="btn " onclick="filterProduct('sunglass',event)">SUNGLASS</button>
+            <button class="btn " onclick="filterProduct('headphone',event)">HEADPHONE</button>
+            <button class="btn " onclick="filterProduct('other',event)">OTHER</button>
+
+        </div>
+
+        <div class="images"></div>
+
+        <div class="modelViewContainer">
+            <span>X</span>
+        </div>
+
+    </section>
+
+
+
+    <section class="advert">
+
+        <div class="box" data-aos="slide-left">RELIABLE</div>
+        <div class="box" data-aos="slide-right">CHEAPER</div>
+        <div class="box" data-aos="slide-left">ONLY</div>
+        <div class="box" data-aos="slide-right">ON</div>
+        <div class="box" data-aos="slide-left">RECTARC</div>
+
+    </section>
+
+    <div class="social_links">
+
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        once:true
+    }
+    );
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

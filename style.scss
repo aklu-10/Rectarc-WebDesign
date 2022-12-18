@@ -1,0 +1,484 @@
+$primary:#3d3d3d;
+$secondary:#727272;
+$teritary:#666665;
+$lighter:#8e8e8d;
+$cream:#fffdf6;
+
+
+@mixin Flex($hA,$vA)
+{   
+    display: flex;
+    justify-content: $hA;
+    align-items: $vA;
+}
+
+::-webkit-scrollbar
+{
+    width:5px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: $teritary;
+    border-radius: 20px;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+a
+{
+    text-decoration: none;
+}
+
+
+.btn
+{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: $primary;
+    border:none;
+    border-radius: 50px;
+    color:$lighter;
+    font-weight: 900;
+    box-shadow: 0 0 4px gray;
+}
+
+
+header
+{
+    position: sticky;
+    top:0;
+    z-index: 10;
+    box-shadow: 0 0 2px gray;
+    display: grid;
+    grid-template-columns: 10vw 80vw 5vw;
+    padding: 10px 20px;
+    min-height: 10vh;
+    background-color: white;
+
+
+    .logo,nav,.language
+    {
+        @include Flex(space-evenly,center);
+    }
+
+    .logo
+    {
+        img
+        {
+            position: relative;
+            left:10px;
+        }
+
+        h2
+        {
+            color:$primary;
+        }
+    }
+
+    nav,.language
+    {
+
+        a,span,i
+        {
+            color:$secondary;
+            font-size: .9rem;
+        }
+    }
+
+    nav
+    {
+        padding: 0 20%;
+    }
+
+    .language
+    {
+
+        i
+        {
+            padding: 0 10px;
+
+        }
+    }
+
+    .menu
+    {
+        display: none;
+    }
+
+
+}
+
+
+
+.hero
+{
+    width:100vw;
+    height: 90vh;
+    background-color: $cream;
+    position: relative;
+    @include Flex(center,center);
+    
+    .slider
+    {
+        width:100vw;
+        min-height: 50vh;
+        @include Flex(center,center);
+        flex-direction:column;
+        overflow: hidden;
+
+        .arrow
+        {
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .currentframe_indicator,
+        .frames
+        {
+            width:80%;
+            transition: .2s ease;
+        }
+
+        .frames
+        {
+            display: flex;
+
+            .frame
+            {
+
+                display: grid;
+                grid-template-columns: 30vw 80vw;
+
+                .frame_pic,
+                .frame_text
+                {
+                    max-height: 100%;
+                    min-height: 60%;
+                }
+            
+
+                .frame_pic
+                {
+                    flex-basis: 40%;
+                    overflow: hidden;
+                    filter: drop-shadow(0 0 4px gray);
+                    
+                    img
+                    {
+                        width:75%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .frame_text
+                {
+                    flex-basis: 60%;
+                    padding: 0 8%;
+                    @include Flex(center,flex-start);
+                    flex-direction: column;
+
+                    span
+                    {
+                        display: block;
+                        color:$secondary;
+                        font-size: .8rem;
+                    }
+                    p
+                    {
+                        font-size: .92rem;
+                        color:$lighter;
+                        padding-right: 50%;
+                    }
+                    
+                    h4
+                    {
+                        font-size: 1.2rem;
+                        color:$primary;
+                    }
+                    
+                    span,h4,p
+                    {
+                        margin-bottom: 10px;
+                    }
+                 
+                }
+
+            }
+
+        }
+
+        
+        .currentframe_indicator
+        {
+            margin-top: 1%;
+            flex-basis: 10%;
+            @include Flex(center,center);
+            position: relative;
+
+            span
+            {
+                display: inline-block;
+                width:12px;
+                height:10px;
+                border:1px solid $primary;
+                margin: 0 1%;
+                cursor: pointer;
+
+                &::before
+                {
+                    content:'';
+                    position: absolute;
+                    top:-6px;
+                    left:50%;
+                    width:10%;
+                    border-bottom:1px solid $lighter;
+                }
+                
+                &::after
+                {
+                    content:'';
+                    position: absolute;
+                    bottom:-6px;
+                    right:50%;
+                    width:10%;
+                    border-bottom:1px solid $lighter;
+                }
+
+                &.active
+                {
+                    background-color: $primary;
+                }
+
+            }
+
+        }
+
+    }
+
+    .image_counter
+    {
+        @include Flex(space-around,center);
+        width:10vw;
+        position: absolute;
+        bottom:2%;
+        right:10%;
+        transition: .2s ease;
+    }
+
+    .company_watermark
+    {
+        .top
+        {
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: #8e8e8d;
+            -webkit-text-stroke-width: 1px;
+            position: fixed;
+            top:12vh;
+            right:10%;
+            font-size: 6rem;
+            opacity: .4;
+        }
+
+        .bottom
+        {
+            position: fixed;
+            bottom:10px;
+            left:20px;
+            font-size: 6rem;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: #8e8e8d;
+            -webkit-text-stroke-width: 1px;
+            opacity: .4;
+        }
+
+    }
+
+
+}
+
+@media (max-width:1000px)
+{
+    
+    .hero
+    {
+        .slider
+        {
+            .frames
+            {
+                .frame
+                {
+                    .frame_pic
+                    {
+                        grid-column: 1/3;
+                        
+                        img
+                        {
+                            width:45%;
+                        }
+                    }
+
+                    .frame_text
+                    {
+                        grid-column: 1/3;
+
+                        p
+                        {
+                            padding-right:35%;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .image_counter
+        {
+            width:100%;
+            right:50%;
+            transform: translateX(50%);
+
+        }
+
+        .company_watermark
+        {
+            .top
+            {
+                font-size: 6rem;
+                opacity: .2;
+            }
+
+            .bottom
+            {
+                display: none;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+
+.gallery
+{
+    min-height: 100vh;
+    @include Flex(flex-start,center);
+    flex-direction: column;
+    .filters
+    {
+        height: 200px;
+        width: 60%;
+        @include Flex(center,center);
+        flex-wrap: wrap;
+
+        @media (max-width:800px)
+        {
+            &
+            {
+                width: 70%;
+                margin-bottom: 10%;
+            }
+        }
+
+
+        .btn
+        {
+            background-color:transparent;
+            box-shadow: none;
+            border:1px solid $lighter;
+            font-weight: 100;
+            margin:0 10px;
+            cursor: pointer;
+
+            &.active
+            {
+                background-color: $primary;
+                color:whitesmoke;
+            }
+        }
+
+
+    }
+
+    .images
+    {
+        min-height: 500px;
+        width: 50vw;
+        columns: 2 200px;
+        gap: 10px;
+
+        img
+        {
+            width:100%;
+        }
+        
+    }
+
+}
+
+
+
+.advert
+{
+    min-height: 100vh;
+    padding-top: 20%;
+
+    .box
+    {
+        margin-bottom: 5%;
+        width:100vw;
+        height: 15vh;
+        background-color: $primary;
+        color:$lighter;
+        font-size: 2rem;
+        @include Flex(center,center);
+
+        @media (max-width:800px)
+        {
+            &
+            {
+                height: 10vh;
+                font-size: 1.5rem;
+            }   
+        }
+
+    }
+
+
+}
+
+
+.social_links
+{
+    padding: 50px;
+    @include Flex(center,center);
+    i
+    {
+        margin: 0 10%;
+    }
+}
+
+
+@import 'partials/responsive';

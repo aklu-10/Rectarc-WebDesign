@@ -1,0 +1,76 @@
+
+
+
+@media (max-width:1000px)
+{
+    html
+    {
+        font-size: 90%;
+    }
+
+    header
+    {
+
+        grid-template-columns: max-content 1fr;
+        padding: 10px 0px;
+        
+        .logo
+        {
+            img
+            {
+                width:40%;
+            }
+
+            h2
+            {
+                font-size: 1.2rem;
+            }
+        }
+
+        nav
+        {
+            position: fixed;
+            top:0vh;
+            left:0;
+            right:0;
+            bottom:0;
+            width:60vw;
+            height: 0vh;
+            justify-content: space-around;
+            flex-direction: column;
+            overflow: hidden;
+            background-color: $primary;
+            transition: .2s ease;
+            .fa-magnifying-glass
+            {
+                order:-1;
+            }
+        }
+
+        nav.show
+        {
+            top:10vh;
+            height: 90vh;
+        }
+
+
+        .language
+        {
+            display: none;
+        }
+        .menu
+        {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 2rem;
+            padding:0 20px;
+            color:$secondary;
+        }
+
+
+    }
+    
+}
+
+
